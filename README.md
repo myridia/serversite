@@ -6,6 +6,7 @@ We have many servers online what are performing public services like a Mail Tran
 Often other Companies or Institution require us to identify those Server, so we create a basic HTML Website to show under the main server Domain
 Example: https://grallator.com
 
-## What we show.
+## What to show
+* Data pulled from json data file
 * Main Services with entrance
 * Legal Info
