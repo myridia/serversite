@@ -10,3 +10,13 @@ Example: https://grallator.com
 * Data pulled from json data file
 * Main Services with entrance
 * Legal Info
+
+## Install
+```
+git clone https://github.com/myridia.com/serversite.git
+```
+
+## Setup Index forwarder
+```
+ln -s serversite/builder/index.html  index.html
+```
