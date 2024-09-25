@@ -11,12 +11,21 @@ Example: https://grallator.com
 * Main Services with entrance
 * Legal Info
 
+## Requirement
+```
+apt-get install npm
+```
+
 ## Install
 ```
 git clone https://github.com/myridia.com/serversite.git
+cd serversite/themes/bootstrap/
+npm install
 ```
 
 ## Setup Index forwarder
 ```
 ln -s serversite/builder/index.html  index.html
 ```
+
+
