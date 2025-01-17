@@ -25,6 +25,7 @@ npm install
 
 ## Setup Index forwarder
 ```
+cd ../../../../
 ln -s serversite/builder/index.html  index.html
 ```
 
