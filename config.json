@@ -1,0 +1,78 @@
+{
+  "title": "web.salamander-jewelry.net",
+  "description": "Internal server overview",
+  "updated": "2026-07-08",
+  "mail": {
+    "host": "web.salamander-jewelry.net",
+    "smtp": "25 / 26 / 587",
+    "imap": "143",
+    "pop3": "110",
+    "security": "StartTLS"
+  },
+  "services": [
+    {
+      "name": "Webmail",
+      "icon": "&#x2709;",
+      "description": "Access your email via web browser",
+      "links": [
+        { "label": "Squirrelmail", "url": "../squirrelmail" },
+        { "label": "Roundcube", "url": "../roundcubemail" }
+      ]
+    },
+    {
+      "name": "Froxlor",
+      "icon": "&#x1f4e1;",
+      "description": "Server control panel — manage domains, SSL, databases",
+      "links": [
+        { "label": "Open", "url": "../froxlor" }
+      ]
+    },
+    {
+      "name": "phpMyAdmin",
+      "icon": "&#x1f4c2;",
+      "description": "MySQL / MariaDB administration",
+      "links": [
+        { "label": "Open", "url": "../phpmyadmin" }
+      ]
+    },
+    {
+      "name": "Adminer",
+      "icon": "&#x1f5c4;",
+      "description": "Database management (MySQL, PostgreSQL, SQLite & more)",
+      "links": [
+        { "label": "Open", "url": "../adminer/adminer/?ns=public" }
+      ]
+    },
+    {
+      "name": "CouchDB",
+      "icon": "&#x1f4cb;",
+      "description": "Seamless multi-master sync with HTTP/JSON API",
+      "links": [
+        { "label": "Open", "url": "https://couchdb2.salamander-jewelry.com/_utils/" }
+      ]
+    },
+    {
+      "name": "Ejabberd",
+      "icon": "&#x1f4ac;",
+      "description": "XMPP instant messaging & MQTT broker",
+      "links": [
+        { "label": "Open", "url": "https://calantas.com:5280/admin" }
+      ]
+    }
+  ],
+  "impressum": {
+    "name": "Myridia Co., Ltd.",
+    "email": "info@myridia.com",
+    "url": "https://www.myridia.com",
+    "address": [
+      "Room: 82/090, Floor: 5, Building B",
+      "83/198 Salaya",
+      "Soi Baan Tanngin",
+      "Phutthamonthon, Nakhon Pathom 73170",
+      "Thailand"
+    ],
+    "tel": "+66832163880",
+    "privacy": "The site fully respects your right to privacy and will not collect any personal information about you on this website without your clear permission. Any personal information you give to Myridia will be treated with the highest standards of security and confidentiality. The site is not responsible for the content or privacy practices of other websites. Any external links to other websites are clearly identifiable as such."
+  },
+  "contact_text": "Please let us know if you have any questions. Should you need any further information, do not hesitate to contact us."
+}

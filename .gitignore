@@ -1,8 +1,1 @@
-debug/
-target/
-Cargo.lock
-*~
-~*
-*.orig
-node_modules
-
+/target
