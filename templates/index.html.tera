@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ cfg.description | escape }}">
+  <title>Server — {{ cfg.title | escape }}</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+  <style>
+    header, footer { text-align: center; }
+    section + section { margin-top: var(--pico-spacing); }
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: var(--pico-grid-gap, 1rem);
+    }
+    .service-grid article { text-align: center; }
+  </style>
+</head>
+<body>
+
+<header class="container">
+  <hgroup>
+    <h1>{{ cfg.title | escape }}</h1>
+    <p>{{ cfg.description | escape }}</p>
+  </hgroup>
+</header>
+
+<main class="container">
+
+  <section>
+    <h2>Services</h2>
+    <div class="service-grid">
+    {% for svc in cfg.services %}
+      <article>
+        <h3>{{ svc.icon | safe }} {{ svc.name | escape }}</h3>
+        <p>{{ svc.description | escape }}</p>
+        <footer>
+        {% for link in svc.links %}
+          <a href="{{ link.url | escape }}" role="button" class="outline" target="_top">{{ link.label | escape }}</a>
+        {% endfor %}
+        </footer>
+      </article>
+    {% endfor %}
+    </div>
+  </section>
+
+  <section>
+    <h2>Mail settings</h2>
+    <article>
+      <table>
+        <tr><th>Mail host</th><td>{{ cfg.mail.host | escape }}</td></tr>
+        <tr><th>SMTP port</th><td>{{ cfg.mail.smtp | escape }}</td></tr>
+        <tr><th>IMAP port</th><td>{{ cfg.mail.imap | escape }}</td></tr>
+        <tr><th>POP3 port</th><td>{{ cfg.mail.pop3 | escape }}</td></tr>
+        <tr><th>Security</th><td>{{ cfg.mail.security | escape }}</td></tr>
+      </table>
+    </article>
+  </section>
+
+  <hr>
+
+  <section id="impressum">
+    <h2>Impressum</h2>
+    <article>
+      <p>
+        <strong>{{ cfg.impressum.name | escape }}</strong><br>
+        Email: <a href="mailto:{{ cfg.impressum.email | escape }}">{{ cfg.impressum.email | escape }}</a><br>
+        <a href="{{ cfg.impressum.url | escape }}">{{ cfg.impressum.url | escape }}</a><br><br>
+      {% for line in cfg.impressum.address %}
+        {{ line | escape }}<br>
+      {% endfor %}
+        Tel: {{ cfg.impressum.tel | escape }}
+      </p>
+      <p><small>{{ cfg.impressum.privacy | escape }}</small></p>
+    </article>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <article>
+      <p>{{ cfg.contact_text | escape }}</p>
+      <p><a href="mailto:{{ cfg.impressum.email | escape }}" role="button">{{ cfg.impressum.email | escape }}</a></p>
+    </article>
+  </section>
+
+</main>
+
+<footer class="container">
+  <small>Server &middot; updated <time datetime="{{ cfg.updated | escape }}">{{ cfg.updated | escape }}</time></small>
+</footer>
+
+</body>
+</html>
