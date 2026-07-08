@@ -2,29 +2,13 @@ name: Build and release
 
 on:
   push:
+    branches: ["main"]
     tags:
-      - "v*"
+      - '*'
+  workflow_dispatch:
+  
 
 jobs:
-  build:
-    strategy:
-      matrix:
-        target:
-          - x86_64-unknown-linux-gnu
-          - x86_64-pc-windows-gnu
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: dtolnay/rust-toolchain@stable
-        with:
-          targets: ${{ matrix.target }}
-      - uses: Swatinem/rust-cache@v2
-      - run: cargo build --release --target ${{ matrix.target }}
-      - uses: softprops/action-gh-release@v2
-        if: startsWith(github.ref, 'refs/tags/')
-        with:
-          files: target/${{ matrix.target }}/release/serversite-gen${{ matrix.target == 'x86_64-pc-windows-gnu' && '.exe' || '' }}
-
   build-freebsd:
     runs-on: ubuntu-latest
     steps:
