@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Internal server overview">
-  <title>Server — web.salamander-jewelry.net</title>
+  <title>Server — webx.salamander-jewelry.net</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
   <style>
     header, footer { text-align: center; }
@@ -15,13 +15,22 @@
       gap: var(--pico-grid-gap, 1rem);
     }
     .service-grid article { text-align: center; }
+    .theme-toggle { position: fixed; top: 1rem; right: 1rem; z-index: 100; }
   </style>
 </head>
 <body>
 
+<nav class="theme-toggle">
+  <ul>
+    <li><a href="#" onclick="document.documentElement.setAttribute('data-theme','light')" role="button" class="secondary outline">Light</a></li>
+    <li><a href="#" onclick="document.documentElement.setAttribute('data-theme','dark')" role="button" class="secondary outline">Dark</a></li>
+    <li><a href="#" onclick="document.documentElement.removeAttribute('data-theme')" role="button" class="secondary outline">Auto</a></li>
+  </ul>
+</nav>
+
 <header class="container">
   <hgroup>
-    <h1>web.salamander-jewelry.net</h1>
+    <h1>webx.salamander-jewelry.net</h1>
     <p>Internal server overview</p>
   </hgroup>
 </header>

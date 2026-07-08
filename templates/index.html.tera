@@ -15,9 +15,18 @@
       gap: var(--pico-grid-gap, 1rem);
     }
     .service-grid article { text-align: center; }
+    .theme-toggle { position: fixed; top: 1rem; right: 1rem; z-index: 100; }
   </style>
 </head>
 <body>
+
+<nav class="theme-toggle">
+  <ul>
+    <li><a href="#" onclick="document.documentElement.setAttribute('data-theme','light')" role="button" class="secondary outline">Light</a></li>
+    <li><a href="#" onclick="document.documentElement.setAttribute('data-theme','dark')" role="button" class="secondary outline">Dark</a></li>
+    <li><a href="#" onclick="document.documentElement.removeAttribute('data-theme')" role="button" class="secondary outline">Auto</a></li>
+  </ul>
+</nav>
 
 <header class="container">
   <hgroup>
