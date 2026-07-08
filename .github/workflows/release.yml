@@ -6,8 +6,6 @@ on:
     tags:
       - '*'
   workflow_dispatch:
-  
-
 jobs:
   build-freebsd:
     runs-on: ubuntu-latest
