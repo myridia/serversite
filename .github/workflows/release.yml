@@ -27,7 +27,7 @@ jobs:
          
       - name: Release
         run: 
-          ls target/ 
+          ls target/x86_64-unknown-linux-gnu/release/ 
           
       - name: Release
         if: github.repository_owner == 'myridia'                  
