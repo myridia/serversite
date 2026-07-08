@@ -36,7 +36,7 @@
     },
     {
       "name": "phpMyAdmin",
-      "icon": "&#x1f4c2;",
+      "image": "https://raw.githubusercontent.com/myridia/serversite/main/assets/phpmyadmin.png",
       "description": "MySQL / MariaDB administration",
       "links": [
         { "label": "Open", "url": "../phpmyadmin" }
