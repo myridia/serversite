@@ -27,7 +27,10 @@ struct Mail {
 #[derive(Serialize, Deserialize, Debug)]
 struct Service {
     name: String,
+    #[serde(default)]
     icon: String,
+    #[serde(default)]
+    image: String,
     description: String,
     links: Vec<Link>,
 }
@@ -64,12 +67,14 @@ fn default_config() -> Config {
             Service {
                 name: "Froxlor".into(),
                 icon: "&#x1f4e1;".into(),
+                image: String::new(),
                 description: "Server control panel".into(),
                 links: vec![Link { label: "Open".into(), url: "../froxlor".into() }],
             },
             Service {
                 name: "phpMyAdmin".into(),
                 icon: "&#x1f4c2;".into(),
+                image: String::new(),
                 description: "MySQL / MariaDB administration".into(),
                 links: vec![Link { label: "Open".into(), url: "../phpmyadmin".into() }],
             },

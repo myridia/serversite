@@ -11,17 +11,24 @@
   },
   "services": [
     {
-      "name": "Webmail",
-      "icon": "&#x2709;",
-      "description": "Access your email via web browser",
+      "name": "Squirrelmail",
+      "image": "https://raw.githubusercontent.com/myridia/serversite/main/assets/squirrelmail.png",
+      "description": "Webmail access",
       "links": [
-        { "label": "Squirrelmail", "url": "../squirrelmail" },
-        { "label": "Roundcube", "url": "../roundcubemail" }
+        { "label": "Open", "url": "../squirrelmail" }
+      ]
+    },
+    {
+      "name": "Roundcube",
+      "image": "https://raw.githubusercontent.com/myridia/serversite/main/assets/roundcube.png",
+      "description": "Webmail access",
+      "links": [
+        { "label": "Open", "url": "../roundcubemail" }
       ]
     },
     {
       "name": "Froxlor",
-      "icon": "&#x1f4e1;",
+      "image": "https://raw.githubusercontent.com/myridia/serversite/main/assets/froxlor.png",
       "description": "Server control panel — manage domains, SSL, databases",
       "links": [
         { "label": "Open", "url": "../froxlor" }
@@ -37,7 +44,7 @@
     },
     {
       "name": "Adminer",
-      "icon": "&#x1f5c4;",
+      "image": "https://raw.githubusercontent.com/myridia/serversite/main/assets/adminer.png",
       "description": "Database management (MySQL, PostgreSQL, SQLite & more)",
       "links": [
         { "label": "Open", "url": "../adminer/adminer/?ns=public" }
@@ -45,7 +52,7 @@
     },
     {
       "name": "CouchDB",
-      "icon": "&#x1f4cb;",
+      "image": "https://raw.githubusercontent.com/myridia/serversite/main/assets/couchdb.png",
       "description": "Seamless multi-master sync with HTTP/JSON API",
       "links": [
         { "label": "Open", "url": "https://couchdb2.salamander-jewelry.com/_utils/" }

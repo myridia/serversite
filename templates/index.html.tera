@@ -33,7 +33,7 @@
     <div class="service-grid">
     {% for svc in cfg.services %}
       <article>
-        <h3>{{ svc.icon | safe }} {{ svc.name | escape }}</h3>
+        <h3>{% if svc.image %}<img src="{{ svc.image | escape }}" alt="{{ svc.name | escape }}" style="max-height:2.5em;vertical-align:middle">{% else %}{{ svc.icon | safe }}{% endif %} {{ svc.name | escape }}</h3>
         <p>{{ svc.description | escape }}</p>
         <footer>
         {% for link in svc.links %}
