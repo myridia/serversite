@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Server overview — web.salamander-jewelry.net">
+  <title>Server — web.salamander-jewelry.net</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+  <style>
+    header, footer { text-align: center; }
+    section + section { margin-top: var(--pico-spacing); }
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: var(--pico-grid-gap, 1rem);
+    }
+    .service-grid article {
+      text-align: center;
+    }
+    .service-grid article img {
+      max-height: 60px;
+      margin-bottom: var(--pico-spacing);
+    }
+  </style>
+</head>
+<body>
+
+<header class="container">
+  <hgroup>
+    <h1>web.salamander-jewelry.net</h1>
+    <p>Internal server overview</p>
+  </hgroup>
+</header>
+
+<main class="container">
+
+  <section>
+    <h2>Services</h2>
+    <div class="service-grid">
+      <article>
+        <h3>&#x2709; Webmail</h3>
+        <p>Access your email via web browser</p>
+        <footer><a href="../squirrelmail" role="button" class="outline" target="_top">Squirrelmail</a>
+        <a href="../roundcubemail" role="button" class="outline" target="_top">Roundcube</a></footer>
+      </article>
+      <article>
+        <h3>&#x1f4e1; Froxlor</h3>
+        <p>Server control panel — manage domains, SSL, databases</p>
+        <footer><a href="../froxlor" role="button" class="outline" target="_top">Open</a></footer>
+      </article>
+      <article>
+        <h3>&#x1f4c2; phpMyAdmin</h3>
+        <p>MySQL / MariaDB administration</p>
+        <footer><a href="../phpmyadmin" role="button" class="outline" target="_top">Open</a></footer>
+      </article>
+      <article>
+        <h3>&#x1f5c4; Adminer</h3>
+        <p>Database management (MySQL, PostgreSQL, SQLite &amp; more)</p>
+        <footer><a href="../adminer/adminer/?ns=public" role="button" class="outline" target="_top">Open</a></footer>
+      </article>
+      <article>
+        <h3>&#x1f4cb; CouchDB</h3>
+        <p>Seamless multi-master sync with HTTP/JSON API</p>
+        <footer><a href="https://couchdb2.salamander-jewelry.com/_utils/" role="button" class="outline" target="_top">Open</a></footer>
+      </article>
+      <article>
+        <h3>&#x1f4ac; Ejabberd</h3>
+        <p>XMPP instant messaging &amp; MQTT broker</p>
+        <footer><a href="https://calantas.com:5280/admin" role="button" class="outline" target="_top">Open</a></footer>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <h2>Mail settings</h2>
+    <article>
+      <table>
+        <tr><th>Mail host</th><td>web.salamander-jewelry.net</td></tr>
+        <tr><th>SMTP port</th><td>25 / 26 / 587</td></tr>
+        <tr><th>IMAP port</th><td>143</td></tr>
+        <tr><th>POP3 port</th><td>110</td></tr>
+        <tr><th>Security</th><td>StartTLS</td></tr>
+      </table>
+    </article>
+  </section>
+
+  <hr>
+
+  <section id="impressum">
+    <h2>Impressum</h2>
+    <article>
+      <p>
+        <strong>Myridia Co., Ltd.</strong><br>
+        Email: <a href="mailto:info@myridia.com">info@myridia.com</a><br>
+        <a href="https://www.myridia.com">https://www.myridia.com</a><br><br>
+        Room: 82/090, Floor: 5, Building B<br>
+        83/198 Salaya<br>
+        Soi Baan Tanngin<br>
+        Phutthamonthon, Nakhon Pathom 73170<br>
+        Thailand<br>
+        Tel: +66832163880
+      </p>
+      <p>
+        <small>
+        The site fully respects your right to privacy and will not collect any personal information
+        about you on this website without your clear permission. Any personal information you give
+        to Myridia will be treated with the highest standards of security and confidentiality.
+        The site is not responsible for the content or privacy practices of other websites.
+        Any external links to other websites are clearly identifiable as such.
+        </small>
+      </p>
+    </article>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <article>
+      <p>Please let us know if you have any questions. Should you need any further information, do not hesitate to contact us.</p>
+      <p><a href="mailto:info@myridia.com" role="button">info@myridia.com</a></p>
+    </article>
+  </section>
+
+</main>
+
+<footer class="container">
+  <small>Server &middot; updated <time datetime="2026-07-08">2026-07-08</time></small>
+</footer>
+
+</body>
+</html>
