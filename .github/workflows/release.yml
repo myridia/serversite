@@ -15,23 +15,4 @@ jobs:
       - run: cross build --target x86_64-unknown-freebsd --release
       - run: cross build --release
 
-      #- name: Release
-        #if: github.repository_owner == 'myridia'     
-        #run: 
-          #ls target/x86_64-unknown-freebsd/release
-          #ls target/x86_64-unknown-linux-gnu/release
 
-        #uses: svenstaro/upload-release-action@v2
-        #with:
-        #  repo_token: ${{ secrets.GITHUB_TOKEN }}
-        #  file: 'target/release/ct_linux'
-        #  tag: ${{ github.ref }}
-        #  overwrite: true
-        #  file_glob: true
-      - name: Release   
-        uses: svenstaro/upload-release-action@v2
-        with:
-          run: | 
-            ls target/
-        #with:
-         #files: target/x86_64-unknown-freebsd/release/serversite-gen
