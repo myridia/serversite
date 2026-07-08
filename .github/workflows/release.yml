@@ -29,6 +29,6 @@ jobs:
         #  overwrite: true
         #  file_glob: true
       - name: Release   
-        uses: softprops/action-gh-release@v2
+        uses: svenstaro/upload-release-action@v2
         with:
          files: target/x86_64-unknown-freebsd/release/serversite-gen
