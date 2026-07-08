@@ -31,4 +31,7 @@ jobs:
       - name: Release   
         uses: svenstaro/upload-release-action@v2
         with:
-         files: target/x86_64-unknown-freebsd/release/serversite-gen
+          run: | 
+            ls target/
+        #with:
+         #files: target/x86_64-unknown-freebsd/release/serversite-gen
