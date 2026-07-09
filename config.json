@@ -1,0 +1,52 @@
+{
+  "header": {
+    "title": "ServerPanel",
+    "tagline": "Infrastructure Management",
+    "description": "Centralized server monitoring and management platform",
+    "nav": [
+      { "label": "Dashboard", "url": "/" },
+      { "label": "Servers", "url": "/servers" },
+      { "label": "Services", "url": "/services" },
+      { "label": "Monitor", "url": "/monitor" }
+    ]
+  },
+  "Websites": [
+    {
+      "name": "GMS",
+      "icon": "&#x1f4e1;",
+      "description": "Server control panel with real-time metrics.",
+      "link": "https://gms.example.net"
+    },
+    {
+      "name": "Mail",
+      "icon": "&#x2709;",
+      "description": "Mail server administration.",
+      "link": "https://mail.example.net"
+    },
+    {
+      "name": "Cloud",
+      "icon": "&#x2601;",
+      "description": "Cloud storage and file sync.",
+      "link": "https://cloud.example.net"
+    },
+    {
+      "name": "GitLab",
+      "icon": "&#x1f5c4;",
+      "description": "Self-hosted Git repository management.",
+      "link": "https://git.example.net"
+    },
+    {
+      "name": "Wiki",
+      "icon": "&#x1f4d6;",
+      "description": "Internal knowledge base.",
+      "link": "https://wiki.example.net"
+    }
+  ],
+  "contact": {
+    "text": "Reach out to our support team anytime.",
+    "email": "support@serverpanel.example"
+  },
+  "footer": {
+    "updated": "2026-07-09"
+  }
+}

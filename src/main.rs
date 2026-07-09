@@ -69,6 +69,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         }
         Err(_) => {
             let val: serde_json::Value = serde_json::from_str(DEFAULT_CONFIG)?;
+            fs::write(&config_path, DEFAULT_CONFIG)?;
+            println!("Created default config: {}", config_path.display());
             (val, "built-in default".to_string())
         }
     };
