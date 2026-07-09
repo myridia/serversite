@@ -1,85 +1,52 @@
 {
-  "title": "webx.salamander-jewelry.net",
-  "description": "Internal server overview",
-  "updated": "2026-07-08",
-  "mail": {
-    "host": "web.salamander-jewelry.net",
-    "smtp": "25 / 26 / 587",
-    "imap": "143",
-    "pop3": "110",
-    "security": "StartTLS"
+  "header": {
+    "title": "ServerPanel",
+    "tagline": "Infrastructure Management",
+    "description": "Centralized server monitoring and management platform",
+    "nav": [
+      { "label": "Dashboard", "url": "/" },
+      { "label": "Servers", "url": "/servers" },
+      { "label": "Services", "url": "/services" },
+      { "label": "Monitor", "url": "/monitor" }
+    ]
   },
-  "services": [
+  "Websites": [
     {
-      "name": "Squirrelmail",
-      "image": "https://raw.githubusercontent.com/myridia/serversite/main/assets/squirrelmail.png",
-      "description": "Webmail access",
-      "links": [
-        { "label": "Open", "url": "../squirrelmail" }
-      ]
+      "name": "GMS",
+      "icon": "&#x1f4e1;",
+      "description": "Server control panel with real-time metrics.",
+      "link": "https://gms.example.net"
     },
     {
-      "name": "Roundcube",
-      "image": "https://raw.githubusercontent.com/myridia/serversite/main/assets/roundcube.png",
-      "description": "Webmail access",
-      "links": [
-        { "label": "Open", "url": "../roundcubemail" }
-      ]
+      "name": "Mail",
+      "icon": "&#x2709;",
+      "description": "Mail server administration.",
+      "link": "https://mail.example.net"
     },
     {
-      "name": "Froxlor",
-      "image": "https://raw.githubusercontent.com/myridia/serversite/main/assets/froxlor.png",
-      "description": "Server control panel — manage domains, SSL, databases",
-      "links": [
-        { "label": "Open", "url": "../froxlor" }
-      ]
+      "name": "Cloud",
+      "icon": "&#x2601;",
+      "description": "Cloud storage and file sync.",
+      "link": "https://cloud.example.net"
     },
     {
-      "name": "phpMyAdmin",
-      "image": "https://raw.githubusercontent.com/myridia/serversite/main/assets/phpmyadmin.png",
-      "description": "MySQL / MariaDB administration",
-      "links": [
-        { "label": "Open", "url": "../phpmyadmin" }
-      ]
+      "name": "GitLab",
+      "icon": "&#x1f5c4;",
+      "description": "Self-hosted Git repository management.",
+      "link": "https://git.example.net"
     },
     {
-      "name": "Adminer",
-      "image": "https://raw.githubusercontent.com/myridia/serversite/main/assets/adminer.png",
-      "description": "Database management (MySQL, PostgreSQL, SQLite & more)",
-      "links": [
-        { "label": "Open", "url": "../adminer/adminer/?ns=public" }
-      ]
-    },
-    {
-      "name": "CouchDB",
-      "image": "https://raw.githubusercontent.com/myridia/serversite/main/assets/couchdb.png",
-      "description": "Seamless multi-master sync with HTTP/JSON API",
-      "links": [
-        { "label": "Open", "url": "https://couchdb2.salamander-jewelry.com/_utils/" }
-      ]
-    },
-    {
-      "name": "Ejabberd",
-      "icon": "&#x1f4ac;",
-      "description": "XMPP instant messaging & MQTT broker",
-      "links": [
-        { "label": "Open", "url": "https://calantas.com:5280/admin" }
-      ]
+      "name": "Wiki",
+      "icon": "&#x1f4d6;",
+      "description": "Internal knowledge base.",
+      "link": "https://wiki.example.net"
     }
   ],
-  "impressum": {
-    "name": "Myridia Co., Ltd.",
-    "email": "info@myridia.com",
-    "url": "https://www.myridia.com",
-    "address": [
-      "Room: 82/090, Floor: 5, Building B",
-      "83/198 Salaya",
-      "Soi Baan Tanngin",
-      "Phutthamonthon, Nakhon Pathom 73170",
-      "Thailand"
-    ],
-    "tel": "+66832163880",
-    "privacy": "The site fully respects your right to privacy and will not collect any personal information about you on this website without your clear permission. Any personal information you give to Myridia will be treated with the highest standards of security and confidentiality. The site is not responsible for the content or privacy practices of other websites. Any external links to other websites are clearly identifiable as such."
+  "contact": {
+    "text": "Reach out to our support team anytime.",
+    "email": "support@serverpanel.example"
   },
-  "contact_text": "Please let us know if you have any questions. Should you need any further information, do not hesitate to contact us."
+  "footer": {
+    "updated": "2026-07-09"
+  }
 }

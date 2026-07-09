@@ -1,171 +1,403 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" data-theme="dark">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Internal server overview">
-  <title>Server — webx.salamander-jewelry.net</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ServerPanel &mdash; Centralized server monitoring and management platform</title>
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+
   <style>
-    header, footer { text-align: center; }
-    section + section { margin-top: var(--pico-spacing); }
+    :root {
+      --offcanvas-width: min(360px, 82vw);
+      --transition-speed: 280ms;
+    }
+
+    .container { max-width: 100% !important; padding-inline: 2rem; }
+
+    header.site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.5rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--pico-card-background-color);
+    }
+
+    [data-theme="light"] header.site-header,
+    [data-theme="light"] footer.site-footer {
+      background: #eef1f5;
+    }
+
+    nav.main-nav ul {
+      display: flex;
+      gap: 0.75rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      align-items: center;
+    }
+
+    .burger {
+      display: none;
+      background: transparent;
+      border: none;
+      font: inherit;
+      cursor: pointer;
+      align-items: center;
+      gap: .5rem;
+      text-decoration: none;
+    }
+
+    @media (max-width: 720px) {
+      nav.main-nav { display: none; }
+      .burger { display: inline-flex; }
+    }
+
+    html[data-theme="light"] .burger,
+    html[data-theme="light"] .offcanvas__close {
+      color: #222;
+    }
+
+    #menu {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 999;
+    }
+
+    #menu:target {
+      pointer-events: auto;
+    }
+
+    .offcanvas__backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+      backdrop-filter: blur(2px);
+      opacity: 0;
+      transition: opacity var(--transition-speed) ease;
+      pointer-events: none;
+      z-index: 1000;
+      text-decoration: none;
+    }
+
+    #menu:target .offcanvas__backdrop {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .offcanvas__panel {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: var(--offcanvas-width);
+      max-width: 100%;
+      background: var(--pico-card-background-color);
+      box-shadow: 8px 0 28px rgba(0,0,0,0.16);
+      transform: translateX(-100%);
+      transition: transform var(--transition-speed) cubic-bezier(.2,.9,.25,1);
+      z-index: 1001;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      display: flex;
+      flex-direction: column;
+      outline: none;
+    }
+
+    #menu:target .offcanvas__panel {
+      transform: translateX(0);
+    }
+
+    .offcanvas__header {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      padding: 1rem;
+      border-bottom: 1px solid var(--pico-muted-border-color, rgba(128,128,128,0.2));
+      flex: 0 0 auto;
+    }
+
+    .offcanvas__nav {
+      padding: 1rem;
+      overflow: auto;
+    }
+
+    .offcanvas__nav ul {
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .offcanvas__close {
+      margin-left: auto;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font: inherit;
+      padding: .25rem;
+      text-decoration: none;
+    }
+
+    .offcanvas__panel a:focus {
+      outline: 3px solid Highlight;
+      outline-offset: 2px;
+    }
+
+    html { scroll-behavior: auto; }
+
+    main.container { padding-top: 1rem; }
+
     .service-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
       gap: var(--pico-grid-gap, 1rem);
     }
-    .service-grid article { text-align: center; }
-    .theme-toggle { position: fixed; top: 1rem; right: 1rem; z-index: 100; }
+
+    .service-grid article { text-align: center; transition: box-shadow .2s, transform .2s; }
+    .service-grid article:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.15); transform: translateY(-2px); }
+    .service-grid article h3 { margin-bottom: .25rem; }
+    .service-grid article img { max-height: 2.5em; vertical-align: middle; margin-right: .25rem; }
+
+    .contact-section { text-align: center; }
+    .contact-section article { max-width: 600px; margin: 0 auto; }
+
+    section > hgroup { margin-bottom: var(--pico-spacing); }
+
+    table { margin: 0; }
+
+    footer.site-footer {
+      background: var(--pico-card-background-color);
+      border-top: 1px solid var(--pico-muted-border-color);
+      padding: 3rem 0 1.5rem;
+      margin-top: 3rem;
+    }
+
+    footer.site-footer h5 {
+      margin-bottom: .75rem;
+    }
+
+    footer.site-footer ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    footer.site-footer ul li + li {
+      margin-top: .4rem;
+    }
+
+    footer.site-footer a {
+      color: var(--pico-muted-color);
+      text-decoration: none;
+    }
+
+    footer.site-footer a:hover {
+      color: var(--pico-primary);
+    }
+
+    footer.site-footer .copyright {
+      text-align: center;
+      color: var(--pico-muted-color);
+      font-size: .825rem;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--pico-muted-border-color);
+    }
   </style>
 </head>
 <body>
 
-<nav class="theme-toggle">
-  <ul>
-    <li><a href="#" onclick="document.documentElement.setAttribute('data-theme','light')" role="button" class="secondary outline">Light</a></li>
-    <li><a href="#" onclick="document.documentElement.setAttribute('data-theme','dark')" role="button" class="secondary outline">Dark</a></li>
-    <li><a href="#" onclick="document.documentElement.removeAttribute('data-theme')" role="button" class="secondary outline">Auto</a></li>
-  </ul>
-</nav>
+<header class="site-header">
+  <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:1rem;width:100%">
+    <a class="brand" href="#"><strong>ServerPanel</strong></a>
 
-<header class="container">
-  <hgroup>
-    <h1>webx.salamander-jewelry.net</h1>
-    <p>Internal server overview</p>
-  </hgroup>
+    <nav class="main-nav" role="navigation" aria-label="Primary">
+      <ul>
+        
+        <li><a href="&#x2F;">Dashboard</a></li>
+        
+        <li><a href="&#x2F;servers">Servers</a></li>
+        
+        <li><a href="&#x2F;services">Services</a></li>
+        
+        <li><a href="&#x2F;monitor">Monitor</a></li>
+        
+      </ul>
+    </nav>
+
+    <div style="margin-left:auto;display:flex;gap:.25rem;align-items:center;margin-right:.5rem">
+      <a href="#light" onclick="localStorage.setItem('pico-theme','light');document.documentElement.setAttribute('data-theme','light')" title="Light mode" style="display:flex;padding:.25rem;border-radius:var(--pico-border-radius);color:var(--pico-color);text-decoration:none">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </a>
+      <a href="#dark" onclick="localStorage.setItem('pico-theme','dark');document.documentElement.setAttribute('data-theme','dark')" title="Dark mode" style="display:flex;padding:.25rem;border-radius:var(--pico-border-radius);color:var(--pico-color);text-decoration:none">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </a>
+      <a href="#auto" onclick="localStorage.removeItem('pico-theme');document.documentElement.removeAttribute('data-theme')" title="Auto mode" style="display:flex;padding:.25rem;border-radius:var(--pico-border-radius);color:var(--pico-color);text-decoration:none">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      </a>
+    </div>
+
+    <a class="burger" href="#menu" aria-controls="menu" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+      </svg>
+      Menu
+    </a>
+  </div>
 </header>
+
+<div id="menu" aria-hidden="false">
+  <a class="offcanvas__backdrop" href="#" aria-label="Close menu"></a>
+
+  <aside class="offcanvas__panel" role="dialog" aria-modal="true" aria-label="Primary navigation" tabindex="-1">
+    <div class="offcanvas__header">
+      <strong>Navigation</strong>
+      <a class="offcanvas__close" href="#" aria-label="Close navigation" title="Close">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6 6l12 12M6 18L18 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+        </svg>
+      </a>
+    </div>
+
+    <nav class="offcanvas__nav" aria-label="Mobile primary">
+      <ul>
+        
+        <li><a href="&#x2F;">Dashboard</a></li>
+        
+        <li><a href="&#x2F;servers">Servers</a></li>
+        
+        <li><a href="&#x2F;services">Services</a></li>
+        
+        <li><a href="&#x2F;monitor">Monitor</a></li>
+        
+      </ul>
+    </nav>
+  </aside>
+</div>
 
 <main class="container">
 
-  <section>
-    <h2>Services</h2>
-    <div class="service-grid">
-    
-      <article>
-        <h3><img src="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;myridia&#x2F;serversite&#x2F;main&#x2F;assets&#x2F;squirrelmail.png" alt="Squirrelmail" style="max-height:2.5em;vertical-align:middle"> Squirrelmail</h3>
-        <p>Webmail access</p>
-        <footer>
-        
-          <a href="..&#x2F;squirrelmail" role="button" class="outline" target="_top">Open</a>
-        
-        </footer>
-      </article>
-    
-      <article>
-        <h3><img src="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;myridia&#x2F;serversite&#x2F;main&#x2F;assets&#x2F;roundcube.png" alt="Roundcube" style="max-height:2.5em;vertical-align:middle"> Roundcube</h3>
-        <p>Webmail access</p>
-        <footer>
-        
-          <a href="..&#x2F;roundcubemail" role="button" class="outline" target="_top">Open</a>
-        
-        </footer>
-      </article>
-    
-      <article>
-        <h3><img src="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;myridia&#x2F;serversite&#x2F;main&#x2F;assets&#x2F;froxlor.png" alt="Froxlor" style="max-height:2.5em;vertical-align:middle"> Froxlor</h3>
-        <p>Server control panel — manage domains, SSL, databases</p>
-        <footer>
-        
-          <a href="..&#x2F;froxlor" role="button" class="outline" target="_top">Open</a>
-        
-        </footer>
-      </article>
-    
-      <article>
-        <h3><img src="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;myridia&#x2F;serversite&#x2F;main&#x2F;assets&#x2F;phpmyadmin.png" alt="phpMyAdmin" style="max-height:2.5em;vertical-align:middle"> phpMyAdmin</h3>
-        <p>MySQL &#x2F; MariaDB administration</p>
-        <footer>
-        
-          <a href="..&#x2F;phpmyadmin" role="button" class="outline" target="_top">Open</a>
-        
-        </footer>
-      </article>
-    
-      <article>
-        <h3><img src="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;myridia&#x2F;serversite&#x2F;main&#x2F;assets&#x2F;adminer.png" alt="Adminer" style="max-height:2.5em;vertical-align:middle"> Adminer</h3>
-        <p>Database management (MySQL, PostgreSQL, SQLite &amp; more)</p>
-        <footer>
-        
-          <a href="..&#x2F;adminer&#x2F;adminer&#x2F;?ns=public" role="button" class="outline" target="_top">Open</a>
-        
-        </footer>
-      </article>
-    
-      <article>
-        <h3><img src="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;myridia&#x2F;serversite&#x2F;main&#x2F;assets&#x2F;couchdb.png" alt="CouchDB" style="max-height:2.5em;vertical-align:middle"> CouchDB</h3>
-        <p>Seamless multi-master sync with HTTP&#x2F;JSON API</p>
-        <footer>
-        
-          <a href="https:&#x2F;&#x2F;couchdb2.salamander-jewelry.com&#x2F;_utils&#x2F;" role="button" class="outline" target="_top">Open</a>
-        
-        </footer>
-      </article>
-    
-      <article>
-        <h3>&#x1f4ac; Ejabberd</h3>
-        <p>XMPP instant messaging &amp; MQTT broker</p>
-        <footer>
-        
-          <a href="https:&#x2F;&#x2F;calantas.com:5280&#x2F;admin" role="button" class="outline" target="_top">Open</a>
-        
-        </footer>
-      </article>
-    
-    </div>
-  </section>
 
-  <section>
-    <h2>Mail settings</h2>
-    <article>
-      <table>
-        <tr><th>Mail host</th><td>web.salamander-jewelry.net</td></tr>
-        <tr><th>SMTP port</th><td>25 &#x2F; 26 &#x2F; 587</td></tr>
-        <tr><th>IMAP port</th><td>143</td></tr>
-        <tr><th>POP3 port</th><td>110</td></tr>
-        <tr><th>Security</th><td>StartTLS</td></tr>
-      </table>
+  
+  
+
+  
+<section>
+  <hgroup>
+    <h2>Websites</h2>
+  </hgroup>
+  <div class="service-grid">
+  
+    <a href="https:&#x2F;&#x2F;gms.example.net" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block">
+    <article style="cursor:pointer">
+      <h3>&#x1f4e1; GMS</h3>
+      <p>Server control panel with real-time metrics.</p>
     </article>
-  </section>
-
-  <hr>
-
-  <section id="impressum">
-    <h2>Impressum</h2>
-    <article>
-      <p>
-        <strong>Myridia Co., Ltd.</strong><br>
-        Email: <a href="mailto:info@myridia.com">info@myridia.com</a><br>
-        <a href="https:&#x2F;&#x2F;www.myridia.com">https:&#x2F;&#x2F;www.myridia.com</a><br><br>
-      
-        Room: 82&#x2F;090, Floor: 5, Building B<br>
-      
-        83&#x2F;198 Salaya<br>
-      
-        Soi Baan Tanngin<br>
-      
-        Phutthamonthon, Nakhon Pathom 73170<br>
-      
-        Thailand<br>
-      
-        Tel: +66832163880
-      </p>
-      <p><small>The site fully respects your right to privacy and will not collect any personal information about you on this website without your clear permission. Any personal information you give to Myridia will be treated with the highest standards of security and confidentiality. The site is not responsible for the content or privacy practices of other websites. Any external links to other websites are clearly identifiable as such.</small></p>
+    </a>
+  
+    <a href="https:&#x2F;&#x2F;mail.example.net" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block">
+    <article style="cursor:pointer">
+      <h3>&#x2709; Mail</h3>
+      <p>Mail server administration.</p>
     </article>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <article>
-      <p>Please let us know if you have any questions. Should you need any further information, do not hesitate to contact us.</p>
-      <p><a href="mailto:info@myridia.com" role="button">info@myridia.com</a></p>
+    </a>
+  
+    <a href="https:&#x2F;&#x2F;cloud.example.net" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block">
+    <article style="cursor:pointer">
+      <h3>&#x2601; Cloud</h3>
+      <p>Cloud storage and file sync.</p>
     </article>
-  </section>
+    </a>
+  
+    <a href="https:&#x2F;&#x2F;git.example.net" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block">
+    <article style="cursor:pointer">
+      <h3>&#x1f5c4; GitLab</h3>
+      <p>Self-hosted Git repository management.</p>
+    </article>
+    </a>
+  
+    <a href="https:&#x2F;&#x2F;wiki.example.net" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block">
+    <article style="cursor:pointer">
+      <h3>&#x1f4d6; Wiki</h3>
+      <p>Internal knowledge base.</p>
+    </article>
+    </a>
+  
+  </div>
+</section>
+  
+
+  
+  
+
+  
+  
+
 
 </main>
 
-<footer class="container">
-  <small>Server &middot; updated <time datetime="2026-07-08">2026-07-08</time></small>
+
+<section class="contact-section">
+  <hgroup>
+    <h2>Contact</h2>
+  </hgroup>
+  <article>
+    <p>Reach out to our support team anytime.</p>
+    <p><a href="mailto:support@serverpanel.example" role="button">support@serverpanel.example</a></p>
+  </article>
+</section>
+
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="grid">
+      <div>
+        <h5>ServerPanel</h5>
+        <p style="color:var(--pico-muted-color);font-size:.875rem">Centralized server monitoring and management platform</p>
+      </div>
+      
+      <div>
+        <h5>Links</h5>
+        <ul>
+        
+          <li><a href="&#x2F;">Dashboard</a></li>
+        
+          <li><a href="&#x2F;servers">Servers</a></li>
+        
+          <li><a href="&#x2F;services">Services</a></li>
+        
+          <li><a href="&#x2F;monitor">Monitor</a></li>
+        
+        </ul>
+      </div>
+      
+      
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:support@serverpanel.example">support@serverpanel.example</a></li>
+        </ul>
+      </div>
+      
+    </div>
+    <div class="copyright">ServerPanel &middot; updated <time datetime="2026-07-09">2026-07-09</time></div>
+  </div>
 </footer>
+
+<script>
+  (function() {
+    var t = localStorage.getItem('pico-theme');
+    if (t) document.documentElement.setAttribute('data-theme', t);
+  })();
+</script>
 
 </body>
 </html>
