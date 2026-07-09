@@ -6,6 +6,14 @@ on:
     tags:
       - '*'
   workflow_dispatch:
+  
+permissions:
+  contents: write
+  pull-requests: write 
+  issues: read
+  packages: none
+
+
 jobs:
   build-freebsd:
     runs-on: ubuntu-latest
@@ -13,7 +21,34 @@ jobs:
       - uses: actions/checkout@v4
       - uses: taiki-e/install-action@cross
       - run: cross build --target x86_64-unknown-freebsd --release
-      - uses: softprops/action-gh-release@v2
-        if: startsWith(github.ref, 'refs/tags/')
+      - run: cross build --release
+      - run:
+         mv target/x86_64-unknown-freebsd/release/serversite-gen target/x86_64-unknown-freebsd/release/serversite-gen_freebsd
+         
+      - name: Release
+        run: 
+          ls target/x86_64-unknown-linux-gnu/release/ 
+          
+      - name: Release
+        if: github.repository_owner == 'myridia'                  
+        uses: svenstaro/upload-release-action@v2
         with:
-          files: target/x86_64-unknown-freebsd/release/serversite-gen
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: 'target/x86_64-unknown-freebsd/release/serversite-gen_freebsd'
+          tag: ${{ github.ref }}
+          overwrite: true
+          file_glob: true
+
+      - name: Release
+        if: github.repository_owner == 'myridia'                  
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: 'target/x86_64-unknown-linux-gnu/release/serversite-gen'
+          tag: ${{ github.ref }}
+          overwrite: true
+          file_glob: true
+
+
+    
+
