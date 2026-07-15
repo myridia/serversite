@@ -155,15 +155,18 @@
 
     main.container { padding-top: 1rem; }
 
+    section { scroll-margin-top: 5rem; }
+
     .service-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: var(--pico-grid-gap, 1rem);
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: var(--pico-grid-gap, .75rem);
     }
 
-    .service-grid article { text-align: center; transition: box-shadow .2s, transform .2s; }
+    .service-grid article { text-align: center; transition: box-shadow .2s, transform .2s; padding: .75rem; }
     .service-grid article:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.15); transform: translateY(-2px); }
-    .service-grid article h3 { margin-bottom: .25rem; }
+    .service-grid article h3 { margin-bottom: .25rem; font-size: 0.95rem; }
+    .service-grid article p { font-size: 0.825rem; margin-bottom: 0; }
     .service-grid article img { max-height: 2.5em; vertical-align: middle; margin-right: .25rem; }
 
     .contact-section { text-align: center; }
@@ -286,7 +289,7 @@
   
 
   
-<section>
+<section id="websites">
   <hgroup>
     <h2>Websites</h2>
   </hgroup>
@@ -437,7 +440,7 @@
   
 
   
-<section>
+<section id="server">
   <hgroup>
     <h2>Server</h2>
   </hgroup>
@@ -476,7 +479,7 @@
   
 
   
-<section>
+<section id="api">
   <hgroup>
     <h2>API</h2>
   </hgroup>
@@ -529,7 +532,7 @@
   
 
   
-<section>
+<section id="tamuz online">
   <hgroup>
     <h2>Tamuz Online</h2>
   </hgroup>
@@ -582,7 +585,7 @@
   
 
   
-<section>
+<section id="company">
   <hgroup>
     <h2>Company</h2>
   </hgroup>
