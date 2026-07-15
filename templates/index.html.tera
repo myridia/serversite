@@ -276,7 +276,7 @@
 {% for key, val in cfg %}
   {% if key == "header" or key == "contact" or key == "footer" %}
   {% elif val is object %}
-<section>
+<section id="{{ key | lower }}">
   <hgroup>
     <h2>{{ key | default(value="Section") | escape }}</h2>
   </hgroup>
@@ -301,7 +301,7 @@
 </section>
 
   {% else %}
-<section>
+<section id="{{ key | lower }}">
   <hgroup>
     <h2>{{ key | default(value="Services") | escape }}</h2>
   </hgroup>
