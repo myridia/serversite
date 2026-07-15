@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en" data-theme="dark">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Salamander Jewelry &mdash; Server Dashboard</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
@@ -183,7 +183,7 @@
       margin-top: 3rem;
     }
 
-    footer.site-footer h5 {
+    footer.site-footer .footer-heading {
       margin-bottom: .75rem;
     }
 
@@ -220,16 +220,16 @@
 
 <header class="site-header">
   <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:1rem;width:100%">
-    <a class="brand" href="#"><strong>Salamander Jewelry</strong></a>
+    <h1 style="margin:0;font-size:1.25rem"><a class="brand" href="#">Salamander Jewelry</a></h1>
 
-    <nav class="main-nav" role="navigation" aria-label="Primary">
+    <nav class="main-nav" aria-label="Primary">
       <ul>
         
         <li><a href="#websites">Websites</a></li>
         
-        <li><a href="#server">Server</a></li>
+        <li><a href="#servers">Servers</a></li>
         
-        <li><a href="#api">API</a></li>
+        <li><a href="#apis">APIs</a></li>
         
       </ul>
     </nav>
@@ -258,7 +258,7 @@
 <div id="menu" aria-hidden="false">
   <a class="offcanvas__backdrop" href="#" aria-label="Close menu"></a>
 
-  <aside class="offcanvas__panel" role="dialog" aria-modal="true" aria-label="Primary navigation" tabindex="-1">
+  <div class="offcanvas__panel" tabindex="-1">
     <div class="offcanvas__header">
       <strong>Navigation</strong>
       <a class="offcanvas__close" href="#" aria-label="Close navigation" title="Close">
@@ -273,13 +273,13 @@
         
         <li><a href="#websites">Websites</a></li>
         
-        <li><a href="#server">Server</a></li>
+        <li><a href="#servers">Servers</a></li>
         
-        <li><a href="#api">API</a></li>
+        <li><a href="#apis">APIs</a></li>
         
       </ul>
     </nav>
-  </aside>
+  </div>
 </div>
 
 <main class="container">
@@ -299,6 +299,13 @@
     <article style="cursor:pointer">
       <h3>&#x1f4e1; GMS</h3>
       <p>Server management system</p>
+    </article>
+    </a>
+  
+    <a href="https:&#x2F;&#x2F;peta.salamander-jewelry.net" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block">
+    <article style="cursor:pointer">
+      <h3>&#x1f4ca; Peta</h3>
+      <p>Peta service</p>
     </article>
     </a>
   
@@ -421,13 +428,6 @@
     </article>
     </a>
   
-    <a href="https:&#x2F;&#x2F;peta.salamander-jewelry.net" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block">
-    <article style="cursor:pointer">
-      <h3>&#x1f4ca; Peta</h3>
-      <p>Peta service</p>
-    </article>
-    </a>
-  
     <a href="https:&#x2F;&#x2F;orders.salamander-jewelry.net" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block">
     <article style="cursor:pointer">
       <h3>&#x1f4ca; Orders</h3>
@@ -440,9 +440,9 @@
   
 
   
-<section id="server">
+<section id="servers">
   <hgroup>
-    <h2>Server</h2>
+    <h2>Servers</h2>
   </hgroup>
   <div class="service-grid">
   
@@ -479,9 +479,9 @@
   
 
   
-<section id="api">
+<section id="apis">
   <hgroup>
-    <h2>API</h2>
+    <h2>APIs</h2>
   </hgroup>
   <div class="service-grid">
   
@@ -532,7 +532,7 @@
   
 
   
-<section id="tamuz online">
+<section id="tamuz-online">
   <hgroup>
     <h2>Tamuz Online</h2>
   </hgroup>
@@ -591,8 +591,8 @@
   </hgroup>
   <article>
   
+    <h3>Salamander Jewelry Co., Ltd.</h3>
     <p>
-    <strong>Salamander Jewelry Co., Ltd.</strong><br>
     Email: <a href="mailto:info@body-piercing.com">info@body-piercing.com</a><br>
     
     128&#x2F;1 Moo 7, Soi Wat Nakhon Chuenchum Phuttamonthon Sai 4 Rd.<br>Tambon Kratumlom, Ampur Sampran, Nakhon Pathom<br>73220, Thailand<br>
@@ -619,10 +619,10 @@
   <hgroup>
     <h2>Contact</h2>
   </hgroup>
-  <article>
+  <div>
     <p>Need help with any of these services?</p>
     <p><a href="mailto:info@body-piercing.com" role="button">info@body-piercing.com</a></p>
-  </article>
+  </div>
 </section>
 
 
@@ -630,26 +630,26 @@
   <div class="container">
     <div class="grid">
       <div>
-        <h5>Salamander Jewelry</h5>
+        <strong class="footer-heading">Salamander Jewelry</strong>
         <p style="color:var(--pico-muted-color);font-size:.875rem">Server Dashboard</p>
       </div>
       
       <div>
-        <h5>Links</h5>
+        <strong class="footer-heading">Links</strong>
         <ul>
         
           <li><a href="#websites">Websites</a></li>
         
-          <li><a href="#server">Server</a></li>
+          <li><a href="#servers">Servers</a></li>
         
-          <li><a href="#api">API</a></li>
+          <li><a href="#apis">APIs</a></li>
         
         </ul>
       </div>
       
       
       <div>
-        <h5>Contact</h5>
+        <strong class="footer-heading">Contact</strong>
         <ul>
           <li><a href="mailto:info@body-piercing.com">info@body-piercing.com</a></li>
         </ul>

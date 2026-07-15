@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en" data-theme="dark">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>{% if cfg.header.title %}{{ cfg.header.title | escape }}{% else %}Server{% endif %} &mdash; {{ cfg.header.description | default(value="") | escape }}</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
@@ -183,7 +183,7 @@
       margin-top: 3rem;
     }
 
-    footer.site-footer h5 {
+    footer.site-footer .footer-heading {
       margin-bottom: .75rem;
     }
 
@@ -220,9 +220,9 @@
 
 <header class="site-header">
   <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:1rem;width:100%">
-    <a class="brand" href="#"><strong>{% if cfg.header.title %}{{ cfg.header.title | escape }}{% else %}Server{% endif %}</strong></a>
+    <h1 style="margin:0;font-size:1.25rem"><a class="brand" href="#">{% if cfg.header.title %}{{ cfg.header.title | escape }}{% else %}Server{% endif %}</a></h1>
 
-    <nav class="main-nav" role="navigation" aria-label="Primary">
+    <nav class="main-nav" aria-label="Primary">
       <ul>
         {% if cfg.header.nav %}{% for link in cfg.header.nav %}
         <li><a href="{{ link.url | escape }}">{{ link.label | escape }}</a></li>
@@ -254,7 +254,7 @@
 <div id="menu" aria-hidden="false">
   <a class="offcanvas__backdrop" href="#" aria-label="Close menu"></a>
 
-  <aside class="offcanvas__panel" role="dialog" aria-modal="true" aria-label="Primary navigation" tabindex="-1">
+  <div class="offcanvas__panel" tabindex="-1">
     <div class="offcanvas__header">
       <strong>Navigation</strong>
       <a class="offcanvas__close" href="#" aria-label="Close navigation" title="Close">
@@ -271,7 +271,7 @@
         {% endfor %}{% endif %}
       </ul>
     </nav>
-  </aside>
+  </div>
 </div>
 
 <main class="container">
@@ -279,7 +279,7 @@
 {% for key, val in cfg %}
   {% if key == "header" or key == "contact" or key == "footer" %}
   {% elif val is object %}
-<section id="{{ key | lower }}">
+<section id="{{ key | lower | replace(from=" ", to="-") }}">
   <hgroup>
     <h2>{{ key | default(value="Section") | escape }}</h2>
   </hgroup>
@@ -291,8 +291,8 @@
     {% endfor %}
     </table>
   {% else %}
+    {% if val.name %}<h3>{{ val.name | escape }}</h3>{% endif %}
     <p>
-    {% if val.name %}<strong>{{ val.name | escape }}</strong><br>{% endif %}
     {% if val.email %}Email: <a href="mailto:{{ val.email | escape }}">{{ val.email | escape }}</a><br>{% endif %}
     {% if val.url %}<a href="{{ val.url | escape }}">{{ val.url | escape }}</a><br><br>{% endif %}
     {% if val.address %}{% for line in val.address %}{{ line | escape }}<br>{% endfor %}{% endif %}
@@ -304,7 +304,7 @@
 </section>
 
   {% else %}
-<section id="{{ key | lower }}">
+<section id="{{ key | lower | replace(from=" ", to="-") }}">
   <hgroup>
     <h2>{{ key | default(value="Services") | escape }}</h2>
   </hgroup>
@@ -329,10 +329,10 @@
   <hgroup>
     <h2>Contact</h2>
   </hgroup>
-  <article>
+  <div>
     {% if cfg.contact.text %}<p>{{ cfg.contact.text | escape }}</p>{% endif %}
     {% if cfg.contact.email %}<p><a href="mailto:{{ cfg.contact.email | escape }}" role="button">{{ cfg.contact.email | escape }}</a></p>{% endif %}
-  </article>
+  </div>
 </section>
 {% endif %}
 
@@ -340,12 +340,12 @@
   <div class="container">
     <div class="grid">
       <div>
-        <h5>{% if cfg.header.title %}{{ cfg.header.title | escape }}{% else %}Server{% endif %}</h5>
+        <strong class="footer-heading">{% if cfg.header.title %}{{ cfg.header.title | escape }}{% else %}Server{% endif %}</strong>
         <p style="color:var(--pico-muted-color);font-size:.875rem">{{ cfg.header.description | default(value="") | escape }}</p>
       </div>
       {% if cfg.header.nav %}
       <div>
-        <h5>Links</h5>
+        <strong class="footer-heading">Links</strong>
         <ul>
         {% for link in cfg.header.nav %}
           <li><a href="{{ link.url | escape }}">{{ link.label | escape }}</a></li>
@@ -355,7 +355,7 @@
       {% endif %}
       {% if cfg.contact %}
       <div>
-        <h5>Contact</h5>
+        <strong class="footer-heading">Contact</strong>
         <ul>
           {% if cfg.contact.email %}<li><a href="mailto:{{ cfg.contact.email | escape }}">{{ cfg.contact.email | escape }}</a></li>{% endif %}
         </ul>

@@ -9,12 +9,12 @@
         "url": "#websites"
       },
       {
-        "label": "Server",
-        "url": "#server"
+        "label": "Servers",
+        "url": "#servers"
       },
       {
-        "label": "API",
-        "url": "#api"
+        "label": "APIs",
+        "url": "#apis"
       }
     ]
   },
@@ -24,6 +24,12 @@
       "icon": "&#x1f4e1;",
       "description": "Server management system",
       "link": "https://gms.salamander-jewelry.net"
+    },
+    {
+      "name": "Peta",
+      "icon": "&#x1f4ca;",
+      "description": "Peta service",
+      "link": "https://peta.salamander-jewelry.net"
     },
     {
       "name": "Grid",
@@ -128,19 +134,13 @@
       "link": "https://wiki.salamander-jewelry.net"
     },
     {
-      "name": "Peta",
-      "icon": "&#x1f4ca;",
-      "description": "Peta service",
-      "link": "https://peta.salamander-jewelry.net"
-    },
-    {
       "name": "Orders",
       "icon": "&#x1f4ca;",
       "description": "Orders",
       "link": "https://orders.salamander-jewelry.net"
     }
   ],
-  "Server": [
+  "Servers": [
     {
       "name": "Web",
       "icon": "&#x1f310;",
@@ -166,7 +166,7 @@
       "link": "https://pg3.salamander-jewelry.net/"
     }
   ],
-  "API": [
+  "APIs": [
     {
       "name": "API3",
       "icon": "&#x1f4e1;",
