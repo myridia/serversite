@@ -3,6 +3,8 @@ use std::fs;
 use std::path::PathBuf;
 use tera::{Context, Tera};
 
+const COUCHDB_URL: &str = "https://cb.neriene.com";
+
 const DEFAULT_CONFIG: &str = r##"{
   "header": {
     "title": "ServerPanel",
@@ -57,10 +59,41 @@ const DEFAULT_CONFIG: &str = r##"{
 }"##;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let config_path = env::args()
-        .nth(1)
-        .map(PathBuf::from)
-        .unwrap_or_else(|| PathBuf::from("config.json"));
+    let args: Vec<String> = env::args().collect();
+
+    let online_user = args.iter().position(|a| a == "-o").and_then(|i| args.get(i + 1));
+
+    let config_path = if let Some(user) = online_user {
+        let hex: String = user.bytes().map(|b| format!("{:02x}", b)).collect();
+        let db = format!("userdb-{}", hex);
+        let url = format!("{}/{}/config", COUCHDB_URL, db);
+
+        println!("Fetching config from: {}", url);
+
+        match ureq::get(&url).call() {
+            Ok(response) => {
+                let mut config: serde_json::Value = response.into_json()?;
+
+                if let Some(obj) = config.as_object_mut() {
+                    obj.retain(|k, _| !k.starts_with('_'));
+                }
+
+                let path = PathBuf::from("config.json");
+                fs::write(&path, serde_json::to_string_pretty(&config)?)?;
+                println!("Saved config to: {}", path.display());
+                path
+            }
+            Err(e) => {
+                println!("Online fetch failed ({}), using default config", e);
+                PathBuf::from("config.json")
+            }
+        }
+    } else {
+        env::args()
+            .nth(1)
+            .map(PathBuf::from)
+            .unwrap_or_else(|| PathBuf::from("config.json"))
+    };
 
     let (cfg, source) = match fs::read_to_string(&config_path) {
         Ok(raw) => {

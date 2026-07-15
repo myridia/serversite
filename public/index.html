@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>ServerPanel &mdash; Centralized server monitoring and management platform</title>
+  <title>Salamander Jewelry &mdash; Server Dashboard</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
 
@@ -217,18 +217,16 @@
 
 <header class="site-header">
   <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:1rem;width:100%">
-    <a class="brand" href="#"><strong>ServerPanel</strong></a>
+    <a class="brand" href="#"><strong>Salamander Jewelry</strong></a>
 
     <nav class="main-nav" role="navigation" aria-label="Primary">
       <ul>
         
-        <li><a href="&#x2F;">Dashboard</a></li>
+        <li><a href="#websites">Websites</a></li>
         
-        <li><a href="&#x2F;servers">Servers</a></li>
+        <li><a href="#server">Server</a></li>
         
-        <li><a href="&#x2F;services">Services</a></li>
-        
-        <li><a href="&#x2F;monitor">Monitor</a></li>
+        <li><a href="#api">API</a></li>
         
       </ul>
     </nav>
@@ -270,13 +268,11 @@
     <nav class="offcanvas__nav" aria-label="Mobile primary">
       <ul>
         
-        <li><a href="&#x2F;">Dashboard</a></li>
+        <li><a href="#websites">Websites</a></li>
         
-        <li><a href="&#x2F;servers">Servers</a></li>
+        <li><a href="#server">Server</a></li>
         
-        <li><a href="&#x2F;services">Services</a></li>
-        
-        <li><a href="&#x2F;monitor">Monitor</a></li>
+        <li><a href="#api">API</a></li>
         
       </ul>
     </nav>
@@ -296,43 +292,314 @@
   </hgroup>
   <div class="service-grid">
   
-    <a href="https:&#x2F;&#x2F;gms.example.net" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block">
+    <a href="https:&#x2F;&#x2F;gms.salamander-jewelry.net" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block">
     <article style="cursor:pointer">
       <h3>&#x1f4e1; GMS</h3>
-      <p>Server control panel with real-time metrics.</p>
+      <p>Server management system</p>
     </article>
     </a>
   
-    <a href="https:&#x2F;&#x2F;mail.example.net" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block">
+    <a href="https:&#x2F;&#x2F;grid.salamander-jewelry.net" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block">
     <article style="cursor:pointer">
-      <h3>&#x2709; Mail</h3>
-      <p>Mail server administration.</p>
+      <h3>&#x1f30d; Grid</h3>
+      <p>Grid service</p>
     </article>
     </a>
   
-    <a href="https:&#x2F;&#x2F;cloud.example.net" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block">
+    <a href="https:&#x2F;&#x2F;pm.salamander-jewelry.net" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block">
     <article style="cursor:pointer">
-      <h3>&#x2601; Cloud</h3>
-      <p>Cloud storage and file sync.</p>
+      <h3>&#x1f4cb; PM</h3>
+      <p>Project management</p>
     </article>
     </a>
   
-    <a href="https:&#x2F;&#x2F;git.example.net" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block">
+    <a href="https:&#x2F;&#x2F;apps.salamander-jewelry.net" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block">
     <article style="cursor:pointer">
-      <h3>&#x1f5c4; GitLab</h3>
-      <p>Self-hosted Git repository management.</p>
+      <h3>&#x1f4f1; Apps</h3>
+      <p>Applications portal</p>
     </article>
     </a>
   
-    <a href="https:&#x2F;&#x2F;wiki.example.net" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block">
+    <a href="https:&#x2F;&#x2F;apps4.salamander-jewelry.net" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block">
+    <article style="cursor:pointer">
+      <h3>&#x1f4f1; Apps4</h3>
+      <p>Applications portal 4</p>
+    </article>
+    </a>
+  
+    <a href="https:&#x2F;&#x2F;converter.salamander-jewelry.net" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block">
+    <article style="cursor:pointer">
+      <h3>&#x1f504; Converter</h3>
+      <p>File converter</p>
+    </article>
+    </a>
+  
+    <a href="https:&#x2F;&#x2F;hub.salamander-jewelry.net" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block">
+    <article style="cursor:pointer">
+      <h3>&#x1f310; Hub</h3>
+      <p>Central hub</p>
+    </article>
+    </a>
+  
+    <a href="https:&#x2F;&#x2F;wipm.salamander-jewelry.net" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block">
+    <article style="cursor:pointer">
+      <h3>&#x1f527; WIPM</h3>
+      <p>WIP management</p>
+    </article>
+    </a>
+  
+    <a href="https:&#x2F;&#x2F;stocks.salamander-jewelry.net" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block">
+    <article style="cursor:pointer">
+      <h3>&#x1f4c8; Stocks</h3>
+      <p>Stock tracker</p>
+    </article>
+    </a>
+  
+    <a href="https:&#x2F;&#x2F;code.salamander-jewelry.net" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block">
+    <article style="cursor:pointer">
+      <h3>&#x1f4bb; Code</h3>
+      <p>Code repository</p>
+    </article>
+    </a>
+  
+    <a href="https:&#x2F;&#x2F;redmine.salamander-jewelry.net" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block">
+    <article style="cursor:pointer">
+      <h3>&#x1f4dd; Redmine</h3>
+      <p>Project management</p>
+    </article>
+    </a>
+  
+    <a href="https:&#x2F;&#x2F;it.salamander-jewelry.net" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block">
+    <article style="cursor:pointer">
+      <h3>&#x1f6e1; IT</h3>
+      <p>IT support portal</p>
+    </article>
+    </a>
+  
+    <a href="https:&#x2F;&#x2F;certificate.salamander-jewelry.net" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block">
+    <article style="cursor:pointer">
+      <h3>&#x1f512; Certificate</h3>
+      <p>Certificate management</p>
+    </article>
+    </a>
+  
+    <a href="https:&#x2F;&#x2F;calendar.salamander-jewelry.net" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block">
+    <article style="cursor:pointer">
+      <h3>&#x1f4c5; Calendar</h3>
+      <p>Calendar service</p>
+    </article>
+    </a>
+  
+    <a href="https:&#x2F;&#x2F;files.salamander-jewelry.net" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block">
+    <article style="cursor:pointer">
+      <h3>&#x1f4c1; Files</h3>
+      <p>File storage</p>
+    </article>
+    </a>
+  
+    <a href="https:&#x2F;&#x2F;rc.salamander-jewelry.net" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block">
+    <article style="cursor:pointer">
+      <h3>&#x1f3e0; RC</h3>
+      <p>Report center</p>
+    </article>
+    </a>
+  
+    <a href="https:&#x2F;&#x2F;subdash.salamander-jewelry.net" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block">
+    <article style="cursor:pointer">
+      <h3>&#x1f4ca; Subdash</h3>
+      <p>Supplier dashboard</p>
+    </article>
+    </a>
+  
+    <a href="https:&#x2F;&#x2F;wiki.salamander-jewelry.net" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block">
     <article style="cursor:pointer">
       <h3>&#x1f4d6; Wiki</h3>
-      <p>Internal knowledge base.</p>
+      <p>Internal wiki</p>
+    </article>
+    </a>
+  
+    <a href="https:&#x2F;&#x2F;peta.salamander-jewelry.net" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block">
+    <article style="cursor:pointer">
+      <h3>&#x1f4ca; Peta</h3>
+      <p>Peta service</p>
+    </article>
+    </a>
+  
+    <a href="https:&#x2F;&#x2F;orders.salamander-jewelry.net" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block">
+    <article style="cursor:pointer">
+      <h3>&#x1f4ca; Orders</h3>
+      <p>Orders</p>
     </article>
     </a>
   
   </div>
 </section>
+  
+
+  
+<section>
+  <hgroup>
+    <h2>Server</h2>
+  </hgroup>
+  <div class="service-grid">
+  
+    <a href="https:&#x2F;&#x2F;web.salamander-jewelry.net&#x2F;" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block">
+    <article style="cursor:pointer">
+      <h3>&#x1f310; Web</h3>
+      <p>Web server</p>
+    </article>
+    </a>
+  
+    <a href="https:&#x2F;&#x2F;couchdb.salamander-jewelry.net&#x2F;_utils" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block">
+    <article style="cursor:pointer">
+      <h3>&#x1f5c3; CouchDB</h3>
+      <p>CouchDB database</p>
+    </article>
+    </a>
+  
+    <a href="https:&#x2F;&#x2F;tibellus.salamander-jewelry.net&#x2F;" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block">
+    <article style="cursor:pointer">
+      <h3>&#x1f6e1; Tibellus</h3>
+      <p>Tibellus service</p>
+    </article>
+    </a>
+  
+    <a href="https:&#x2F;&#x2F;pg3.salamander-jewelry.net&#x2F;" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block">
+    <article style="cursor:pointer">
+      <h3>&#x1f5c3; PG3</h3>
+      <p>PostgreSQL instance</p>
+    </article>
+    </a>
+  
+  </div>
+</section>
+  
+
+  
+<section>
+  <hgroup>
+    <h2>API</h2>
+  </hgroup>
+  <div class="service-grid">
+  
+    <a href="https:&#x2F;&#x2F;api3.salamander-jewelry.net" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block">
+    <article style="cursor:pointer">
+      <h3>&#x1f4e1; API3</h3>
+      <p>API endpoint v3</p>
+    </article>
+    </a>
+  
+    <a href="https:&#x2F;&#x2F;sapir.salamander-jewelry.net" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block">
+    <article style="cursor:pointer">
+      <h3>&#x1f4e1; Sapir</h3>
+      <p>Sapir API</p>
+    </article>
+    </a>
+  
+    <a href="https:&#x2F;&#x2F;sapif.salamander-jewelry.net" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block">
+    <article style="cursor:pointer">
+      <h3>&#x1f4e1; Sapif</h3>
+      <p>Sapif API</p>
+    </article>
+    </a>
+  
+    <a href="https:&#x2F;&#x2F;img.salamander-jewelry.net" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block">
+    <article style="cursor:pointer">
+      <h3>&#x1f5bc; IMG</h3>
+      <p>Image service</p>
+    </article>
+    </a>
+  
+    <a href="https:&#x2F;&#x2F;wipma.salamander-jewelry.net" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block">
+    <article style="cursor:pointer">
+      <h3>&#x1f527; WIPMA</h3>
+      <p>WIP management API</p>
+    </article>
+    </a>
+  
+    <a href="https:&#x2F;&#x2F;qb.salamander-jewelry.net" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block">
+    <article style="cursor:pointer">
+      <h3>&#x1f4ca; QB</h3>
+      <p>QuickBooks integration</p>
+    </article>
+    </a>
+  
+  </div>
+</section>
+  
+
+  
+<section>
+  <hgroup>
+    <h2>Tamuz Online</h2>
+  </hgroup>
+  <div class="service-grid">
+  
+    <a href="https:&#x2F;&#x2F;tamuz.salamander-jewelry.net" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block">
+    <article style="cursor:pointer">
+      <h3>&#x1f4e1; Tamuz</h3>
+      <p>Tamuz production</p>
+    </article>
+    </a>
+  
+    <a href="https:&#x2F;&#x2F;tamuz2.salamander-jewelry.net" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block">
+    <article style="cursor:pointer">
+      <h3>&#x1f4e1; Tamuz 2</h3>
+      <p>Tamuz Day Replication</p>
+    </article>
+    </a>
+  
+    <a href="http:&#x2F;&#x2F;192.168.80.32:5801" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block">
+    <article style="cursor:pointer">
+      <h3>&#x1f4e1; Megabom</h3>
+      <p>Megabom Autorobot</p>
+    </article>
+    </a>
+  
+    <a href="http:&#x2F;&#x2F;192.168.80.32:5803&#x2F;" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block">
+    <article style="cursor:pointer">
+      <h3>&#x1f4e1; Balance</h3>
+      <p>Balance Autorobot</p>
+    </article>
+    </a>
+  
+    <a href="http:&#x2F;&#x2F;192.168.80.32:5804&#x2F;" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block">
+    <article style="cursor:pointer">
+      <h3>&#x1f4e1; Supplier</h3>
+      <p>Supplier Autorobot</p>
+    </article>
+    </a>
+  
+    <a href="http:&#x2F;&#x2F;192.168.80.32:5805&#x2F;" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block">
+    <article style="cursor:pointer">
+      <h3>&#x1f4e1; Customer</h3>
+      <p>Customer Autorobot</p>
+    </article>
+    </a>
+  
+  </div>
+</section>
+  
+
+  
+<section>
+  <hgroup>
+    <h2>Company</h2>
+  </hgroup>
+  <article>
+  
+    <p>
+    <strong>Salamander Jewelry Co., Ltd.</strong><br>
+    Email: <a href="mailto:info@body-piercing.com">info@body-piercing.com</a><br>
+    
+    128&#x2F;1 Moo 7, Soi Wat Nakhon Chuenchum Phuttamonthon Sai 4 Rd.<br>Tambon Kratumlom, Ampur Sampran, Nakhon Pathom<br>73220, Thailand<br>
+    Tel: 66-2814-4455
+    
+    </p>
+  
+  </article>
+</section>
+
   
 
   
@@ -350,8 +617,8 @@
     <h2>Contact</h2>
   </hgroup>
   <article>
-    <p>Reach out to our support team anytime.</p>
-    <p><a href="mailto:support@serverpanel.example" role="button">support@serverpanel.example</a></p>
+    <p>Need help with any of these services?</p>
+    <p><a href="mailto:info@body-piercing.com" role="button">info@body-piercing.com</a></p>
   </article>
 </section>
 
@@ -360,21 +627,19 @@
   <div class="container">
     <div class="grid">
       <div>
-        <h5>ServerPanel</h5>
-        <p style="color:var(--pico-muted-color);font-size:.875rem">Centralized server monitoring and management platform</p>
+        <h5>Salamander Jewelry</h5>
+        <p style="color:var(--pico-muted-color);font-size:.875rem">Server Dashboard</p>
       </div>
       
       <div>
         <h5>Links</h5>
         <ul>
         
-          <li><a href="&#x2F;">Dashboard</a></li>
+          <li><a href="#websites">Websites</a></li>
         
-          <li><a href="&#x2F;servers">Servers</a></li>
+          <li><a href="#server">Server</a></li>
         
-          <li><a href="&#x2F;services">Services</a></li>
-        
-          <li><a href="&#x2F;monitor">Monitor</a></li>
+          <li><a href="#api">API</a></li>
         
         </ul>
       </div>
@@ -383,12 +648,12 @@
       <div>
         <h5>Contact</h5>
         <ul>
-          <li><a href="mailto:support@serverpanel.example">support@serverpanel.example</a></li>
+          <li><a href="mailto:info@body-piercing.com">info@body-piercing.com</a></li>
         </ul>
       </div>
       
     </div>
-    <div class="copyright">ServerPanel &middot; updated <time datetime="2026-07-09">2026-07-09</time></div>
+    <div class="copyright">Salamander Jewelry &middot; updated <time datetime="2026-07-09">2026-07-09</time></div>
   </div>
 </footer>
 

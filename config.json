@@ -1,50 +1,261 @@
 {
   "header": {
-    "title": "ServerPanel",
-    "tagline": "Infrastructure Management",
-    "description": "Centralized server monitoring and management platform",
+    "title": "Salamander Jewelry",
+    "tagline": "salamander-jewelry.net",
+    "description": "Server Dashboard",
     "nav": [
-      { "label": "Dashboard", "url": "/" },
-      { "label": "Servers", "url": "/servers" },
-      { "label": "Services", "url": "/services" },
-      { "label": "Monitor", "url": "/monitor" }
+      {
+        "label": "Websites",
+        "url": "#websites"
+      },
+      {
+        "label": "Server",
+        "url": "#server"
+      },
+      {
+        "label": "API",
+        "url": "#api"
+      }
     ]
   },
   "Websites": [
     {
       "name": "GMS",
       "icon": "&#x1f4e1;",
-      "description": "Server control panel with real-time metrics.",
-      "link": "https://gms.example.net"
+      "description": "Server management system",
+      "link": "https://gms.salamander-jewelry.net"
     },
     {
-      "name": "Mail",
-      "icon": "&#x2709;",
-      "description": "Mail server administration.",
-      "link": "https://mail.example.net"
+      "name": "Grid",
+      "icon": "&#x1f30d;",
+      "description": "Grid service",
+      "link": "https://grid.salamander-jewelry.net"
     },
     {
-      "name": "Cloud",
-      "icon": "&#x2601;",
-      "description": "Cloud storage and file sync.",
-      "link": "https://cloud.example.net"
+      "name": "PM",
+      "icon": "&#x1f4cb;",
+      "description": "Project management",
+      "link": "https://pm.salamander-jewelry.net"
     },
     {
-      "name": "GitLab",
-      "icon": "&#x1f5c4;",
-      "description": "Self-hosted Git repository management.",
-      "link": "https://git.example.net"
+      "name": "Apps",
+      "icon": "&#x1f4f1;",
+      "description": "Applications portal",
+      "link": "https://apps.salamander-jewelry.net"
+    },
+    {
+      "name": "Apps4",
+      "icon": "&#x1f4f1;",
+      "description": "Applications portal 4",
+      "link": "https://apps4.salamander-jewelry.net"
+    },
+    {
+      "name": "Converter",
+      "icon": "&#x1f504;",
+      "description": "File converter",
+      "link": "https://converter.salamander-jewelry.net"
+    },
+    {
+      "name": "Hub",
+      "icon": "&#x1f310;",
+      "description": "Central hub",
+      "link": "https://hub.salamander-jewelry.net"
+    },
+    {
+      "name": "WIPM",
+      "icon": "&#x1f527;",
+      "description": "WIP management",
+      "link": "https://wipm.salamander-jewelry.net"
+    },
+    {
+      "name": "Stocks",
+      "icon": "&#x1f4c8;",
+      "description": "Stock tracker",
+      "link": "https://stocks.salamander-jewelry.net"
+    },
+    {
+      "name": "Code",
+      "icon": "&#x1f4bb;",
+      "description": "Code repository",
+      "link": "https://code.salamander-jewelry.net"
+    },
+    {
+      "name": "Redmine",
+      "icon": "&#x1f4dd;",
+      "description": "Project management",
+      "link": "https://redmine.salamander-jewelry.net"
+    },
+    {
+      "name": "IT",
+      "icon": "&#x1f6e1;",
+      "description": "IT support portal",
+      "link": "https://it.salamander-jewelry.net"
+    },
+    {
+      "name": "Certificate",
+      "icon": "&#x1f512;",
+      "description": "Certificate management",
+      "link": "https://certificate.salamander-jewelry.net"
+    },
+    {
+      "name": "Calendar",
+      "icon": "&#x1f4c5;",
+      "description": "Calendar service",
+      "link": "https://calendar.salamander-jewelry.net"
+    },
+    {
+      "name": "Files",
+      "icon": "&#x1f4c1;",
+      "description": "File storage",
+      "link": "https://files.salamander-jewelry.net"
+    },
+    {
+      "name": "RC",
+      "icon": "&#x1f3e0;",
+      "description": "Report center",
+      "link": "https://rc.salamander-jewelry.net"
+    },
+    {
+      "name": "Subdash",
+      "icon": "&#x1f4ca;",
+      "description": "Supplier dashboard",
+      "link": "https://subdash.salamander-jewelry.net"
     },
     {
       "name": "Wiki",
       "icon": "&#x1f4d6;",
-      "description": "Internal knowledge base.",
-      "link": "https://wiki.example.net"
+      "description": "Internal wiki",
+      "link": "https://wiki.salamander-jewelry.net"
+    },
+    {
+      "name": "Peta",
+      "icon": "&#x1f4ca;",
+      "description": "Peta service",
+      "link": "https://peta.salamander-jewelry.net"
+    },
+    {
+      "name": "Orders",
+      "icon": "&#x1f4ca;",
+      "description": "Orders",
+      "link": "https://orders.salamander-jewelry.net"
     }
   ],
+  "Server": [
+    {
+      "name": "Web",
+      "icon": "&#x1f310;",
+      "description": "Web server",
+      "link": "https://web.salamander-jewelry.net/"
+    },
+    {
+      "name": "CouchDB",
+      "icon": "&#x1f5c3;",
+      "description": "CouchDB database",
+      "link": "https://couchdb.salamander-jewelry.net/_utils"
+    },
+    {
+      "name": "Tibellus",
+      "icon": "&#x1f6e1;",
+      "description": "Tibellus service",
+      "link": "https://tibellus.salamander-jewelry.net/"
+    },
+    {
+      "name": "PG3",
+      "icon": "&#x1f5c3;",
+      "description": "PostgreSQL instance",
+      "link": "https://pg3.salamander-jewelry.net/"
+    }
+  ],
+  "API": [
+    {
+      "name": "API3",
+      "icon": "&#x1f4e1;",
+      "description": "API endpoint v3",
+      "link": "https://api3.salamander-jewelry.net"
+    },
+    {
+      "name": "Sapir",
+      "icon": "&#x1f4e1;",
+      "description": "Sapir API",
+      "link": "https://sapir.salamander-jewelry.net"
+    },
+    {
+      "name": "Sapif",
+      "icon": "&#x1f4e1;",
+      "description": "Sapif API",
+      "link": "https://sapif.salamander-jewelry.net"
+    },
+    {
+      "name": "IMG",
+      "icon": "&#x1f5bc;",
+      "description": "Image service",
+      "link": "https://img.salamander-jewelry.net"
+    },
+    {
+      "name": "WIPMA",
+      "icon": "&#x1f527;",
+      "description": "WIP management API",
+      "link": "https://wipma.salamander-jewelry.net"
+    },
+    {
+      "name": "QB",
+      "icon": "&#x1f4ca;",
+      "description": "QuickBooks integration",
+      "link": "https://qb.salamander-jewelry.net"
+    }
+  ],
+  "Tamuz Online": [
+    {
+      "name": "Tamuz",
+      "icon": "&#x1f4e1;",
+      "description": "Tamuz production",
+      "link": "https://tamuz.salamander-jewelry.net"
+    },
+    {
+      "name": "Tamuz 2",
+      "icon": "&#x1f4e1;",
+      "description": "Tamuz Day Replication",
+      "link": "https://tamuz2.salamander-jewelry.net"
+    },
+    {
+      "name": "Megabom",
+      "icon": "&#x1f4e1;",
+      "description": "Megabom Autorobot",
+      "link": "http://192.168.80.32:5801"
+    },
+    {
+      "name": "Balance",
+      "icon": "&#x1f4e1;",
+      "description": "Balance Autorobot",
+      "link": "http://192.168.80.32:5803/"
+    },
+    {
+      "name": "Supplier",
+      "icon": "&#x1f4e1;",
+      "description": "Supplier Autorobot",
+      "link": "http://192.168.80.32:5804/"
+    },
+    {
+      "name": "Customer",
+      "icon": "&#x1f4e1;",
+      "description": "Customer Autorobot",
+      "link": "http://192.168.80.32:5805/"
+    }
+  ],
+  "Company": {
+    "name": "Salamander Jewelry Co., Ltd.",
+    "address": [
+      "128/1 Moo 7, Soi Wat Nakhon Chuenchum Phuttamonthon Sai 4 Rd.",
+      "Tambon Kratumlom, Ampur Sampran, Nakhon Pathom",
+      "73220, Thailand"
+    ],
+    "tel": "66-2814-4455",
+    "email": "info@body-piercing.com",
+    "fax": "66-2-814-3300"
+  },
   "contact": {
-    "text": "Reach out to our support team anytime.",
-    "email": "support@serverpanel.example"
+    "text": "Need help with any of these services?",
+    "email": "info@body-piercing.com"
   },
   "footer": {
     "updated": "2026-07-09"
