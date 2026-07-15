@@ -220,7 +220,7 @@
 
 <header class="site-header">
   <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:1rem;width:100%">
-    <a class="brand" href="#"><strong>{% if cfg.header.title %}{{ cfg.header.title | escape }}{% else %}Server{% endif %}</strong></a>
+    <h1 style="margin:0;font-size:1.25rem"><a class="brand" href="#">{% if cfg.header.title %}{{ cfg.header.title | escape }}{% else %}Server{% endif %}</a></h1>
 
     <nav class="main-nav" aria-label="Primary">
       <ul>
@@ -254,7 +254,7 @@
 <div id="menu" aria-hidden="false">
   <a class="offcanvas__backdrop" href="#" aria-label="Close menu"></a>
 
-  <div class="offcanvas__panel" aria-label="Primary navigation" tabindex="-1">
+  <div class="offcanvas__panel" tabindex="-1">
     <div class="offcanvas__header">
       <strong>Navigation</strong>
       <a class="offcanvas__close" href="#" aria-label="Close navigation" title="Close">
@@ -329,10 +329,10 @@
   <hgroup>
     <h2>Contact</h2>
   </hgroup>
-  <article>
+  <div>
     {% if cfg.contact.text %}<p>{{ cfg.contact.text | escape }}</p>{% endif %}
     {% if cfg.contact.email %}<p><a href="mailto:{{ cfg.contact.email | escape }}" role="button">{{ cfg.contact.email | escape }}</a></p>{% endif %}
-  </article>
+  </div>
 </section>
 {% endif %}
 
