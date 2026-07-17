@@ -62,13 +62,15 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let args: Vec<String> = env::args().collect();
 
     let online_user = args.iter().position(|a| a == "-o").and_then(|i| args.get(i + 1));
+    let doc_name = args.iter().position(|a| a == "-d").and_then(|i| args.get(i + 1));
 
     let config_path = if let Some(user) = online_user {
         let hex: String = user.bytes().map(|b| format!("{:02x}", b)).collect();
         let db = format!("userdb-{}", hex);
-        let url = format!("{}/{}/config", COUCHDB_URL, db);
+        let doc = doc_name.unwrap_or(&"config".to_string());
+        let url = format!("{}/{}/{}", COUCHDB_URL, db, doc);
 
-        println!("Fetching config from: {}", url);
+        println!("Fetching document '{}' from: {}", doc, url);
 
         match ureq::get(&url).call() {
             Ok(response) => {
