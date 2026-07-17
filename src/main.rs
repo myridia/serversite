@@ -67,7 +67,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let config_path = if let Some(user) = online_user {
         let hex: String = user.bytes().map(|b| format!("{:02x}", b)).collect();
         let db = format!("userdb-{}", hex);
-        let doc = doc_name.unwrap_or(&"config".to_string());
+        let default_doc = "config".to_string();
+        let doc = doc_name.unwrap_or(&default_doc);
         let url = format!("{}/{}/{}", COUCHDB_URL, db, doc);
 
         println!("Fetching document '{}' from: {}", doc, url);
