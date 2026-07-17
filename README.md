@@ -49,6 +49,9 @@ chmod +x serversite-gen_freebsd
 
 # Or specify a custom config path
 ./serversite-gen /path/to/custom-config.json
+
+# Or use neriene.com couchdb 
+./serversite-gen -o database -d document 
 ```
 
 This will:
