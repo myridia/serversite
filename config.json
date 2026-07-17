@@ -202,6 +202,12 @@
       "icon": "&#x1f4ca;",
       "description": "QuickBooks integration",
       "link": "https://qb.salamander-jewelry.net"
+    },
+    {
+      "name": "AI",
+      "icon": "&#x1f4e1;",
+      "description": "AI API",
+      "link": "https://ai.salamander-jewelry.net"
     }
   ],
   "Tamuz Online": [
@@ -216,6 +222,12 @@
       "icon": "&#x1f4e1;",
       "description": "Tamuz Day Replication",
       "link": "https://tamuz2.salamander-jewelry.net"
+    },
+    {
+      "name": "Tamuz 3",
+      "icon": "&#x1f4e1;",
+      "description": "Tamuz Day Replication",
+      "link": "https://tamuz3.salamander-jewelry.net"
     },
     {
       "name": "Megabom",
@@ -240,6 +252,32 @@
       "icon": "&#x1f4e1;",
       "description": "Customer Autorobot",
       "link": "http://192.168.80.32:5805/"
+    }
+  ],
+  "Internet Websites": [
+    {
+      "name": "Shop",
+      "icon": "&#x1f4e1;",
+      "description": "Shop",
+      "link": "https://shop.salamander-jewelry.com"
+    },
+    {
+      "name": "BP",
+      "icon": "&#x1f4e1;",
+      "description": "Body-piercing",
+      "link": "https://body-piercing.com"
+    },
+    {
+      "name": "SLBJ",
+      "icon": "&#x1f4e1;",
+      "description": "Slbj USA",
+      "link": "https://shininglight-piercing.com"
+    },
+    {
+      "name": "CB Neriene",
+      "icon": "&#x1f4e1;",
+      "description": "Salamander DB Config",
+      "link": "https://cb.neriene.com/_utils/#database/userdb-73616c616d616e646572/config"
     }
   ],
   "Company": {
