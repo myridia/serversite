@@ -1,3 +1,5 @@
+<img src="serversite.svg" alt="serversite octopus" width="120">
+
 # serversite
 
 A lightweight, configuration-driven static HTML website generator for presenting servers and services. Built in Rust, serversite generates a modern, responsive dashboard from a simple JSON configuration file.
